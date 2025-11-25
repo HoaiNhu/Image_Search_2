@@ -89,16 +89,16 @@ git push -u origin main
 
 Trong phần **Environment** của Render, thêm các biến môi trường:
 
-| Key                    | Value                                                                                                         |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `MONGO_URI`            | `mongodb+srv://hnhu:hoainhu1234@webbuycake.asd8v.mongodb.net/?retryWrites=true&w=majority&appName=WebBuyCake` |
-| `MONGO_DB_NAME`        | `test`                                                                                                        |
-| `MONGO_COLLECTION`     | `products`                                                                                                    |
-| `MODEL_NAME`           | `openai/clip-vit-base-patch32`                                                                                |
-| `DEVICE`               | `cpu`                                                                                                         |
-| `TOP_K`                | `10`                                                                                                          |
-| `SIMILARITY_THRESHOLD` | `0.5`                                                                                                         |
-| `PYTHON_VERSION`       | `3.11.0`                                                                                                      |
+| Key                    | Value                                                                                                      |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `MONGO_URI`            | `mongodb+srv://user:password@webbuycake.asd8v.mongodb.net/?retryWrites=true&w=majority&appName=WebBuyCake` |
+| `MONGO_DB_NAME`        | `test`                                                                                                     |
+| `MONGO_COLLECTION`     | `products`                                                                                                 |
+| `MODEL_NAME`           | `openai/clip-vit-base-patch32`                                                                             |
+| `DEVICE`               | `cpu`                                                                                                      |
+| `TOP_K`                | `10`                                                                                                       |
+| `SIMILARITY_THRESHOLD` | `0.5`                                                                                                      |
+| `PYTHON_VERSION`       | `3.11.0`                                                                                                   |
 
 **⚠️ Lưu ý:**
 
