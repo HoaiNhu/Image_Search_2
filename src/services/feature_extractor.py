@@ -50,8 +50,8 @@ class FeatureExtractor:
         try:
             logger.info("Loading MobileNetV2 model (14MB, very lightweight!)...")
             
-            # Load pre-trained MobileNetV2
-            self.model = models.mobilenet_v2(pretrained=True)
+            # Load pre-trained MobileNetV2 (use weights instead of pretrained)
+            self.model = models.mobilenet_v2(weights='IMAGENET1K_V1')
             
             # Remove classification layer, keep only feature extractor
             self.model = torch.nn.Sequential(*list(self.model.children())[:-1])

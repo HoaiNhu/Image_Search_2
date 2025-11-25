@@ -20,6 +20,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt \
     && rm -rf /root/.cache/pip
 
+# Pre-download MobileNetV2 model during build (saves 30s on first request!)
+RUN python -c "import torch; import torchvision; torchvision.models.mobilenet_v2(weights='IMAGENET1K_V1')" \
+    && echo "MobileNetV2 model pre-downloaded successfully!"
+
 # Copy application code
 COPY . .
 
