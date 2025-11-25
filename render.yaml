@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: image-search-api
+    runtime: python
+    plan: free # Changed from starter - use free tier (512MB RAM)
+    buildCommand: pip install -r requirements.txt
+    startCommand: cd src && uvicorn main:app --host 0.0.0.0 --port 8001 --workers 1 --limit-concurrency 10
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: MONGO_DB_NAME
+        value: test
+      - key: MONGO_COLLECTION
+        value: products
+      - key: MODEL_TYPE
+        value: mobilenet_v2
+      - key: DEVICE
+        value: cpu
+      # Memory Optimization - MUCH BETTER with MobileNetV2 (14MB vs 150MB!)
+      - key: MAX_BATCH_SIZE
+        value: 8
+      - key: CACHE_PRODUCTS
+        value: false
+      - key: LAZY_LOAD_MODEL
+        value: true
+      - key: MAX_PRODUCTS
+        value: 100
+      - key: ENABLE_GC
+        value: true
+      - key: TOP_K
+        value: 10
+      - key: SIMILARITY_THRESHOLD
+        value: 0.5
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    healthCheckPath: /api/v1/health

@@ -1,0 +1,1 @@
+web: cd src && uvicorn main:app --host 0.0.0.0 --port $PORT --workers 1 --limit-concurrency 5 --timeout-keep-alive 30
